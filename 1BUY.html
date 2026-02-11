@@ -1,0 +1,185 @@
+<html>
+    <head>
+        <title>CROSHEQUEEN - Shop</title>
+        <link rel="stylesheet" href="STYLE.CSS">
+</head>
+<body>
+    <header>
+            <div class="container">
+                <h1>CROSHEQUEEN</h1>
+                <nav aria-label="Primary">
+                    <a href="welcome.html">Home</a>
+                    <a href="1BUY.html">Buy</a>
+                    <a href="course.html">Course</a>
+                   
+                    <a href="cart.html">cart</a>
+                </nav>
+            </div>
+        </header>
+        
+        <div class="shop-hero">
+            <h2>Our Beautiful Handmade Crochet Collection</h2>
+            <p>Browse and buy our exclusive crochet items at amazing prices!</p>
+        </div>
+
+        <div class="products-grid">
+            <!-- Product 1: Cute Hat -->
+            <div class="product-card">
+                <div class="product-image-container">
+                    <img class="product-image" src="/New folder/cap.jfif" alt="Cute Crochet Hat">
+                    <div class="discount-tag">50% OFF</div>
+                </div>
+                <div class="product-info">
+                    <h3>Cute Crochet Hat</h3>
+                    <p class="product-description">This is a small cute hat for decoration. It also can be given to animal toys as a charming accessory.</p>
+                    <div class="price-section">
+                        <span class="original-price">₹40</span>
+                        <span class="sale-price">₹20</span>
+                    </div>
+                    <button class="add-to-cart-btn">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- Product 2: Keychain -->
+            <div class="product-card">
+                <div class="product-image-container">
+                    <img class="product-image" src="/New folder/keychain.jfif" alt="Cute Keychain">
+                    <div class="discount-tag">50% OFF</div>
+                </div>
+                <div class="product-info">
+                    <h3>Keychain Craft</h3>
+                    <p class="product-description">A keychain craft you can use to locate keys or as a cute decoration. Perfect for bags and accessories!</p>
+                    <div class="price-section">
+                        <span class="original-price">₹40</span>
+                        <span class="sale-price">₹20</span>
+                    </div>
+                    <button class="add-to-cart-btn">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- Product 3: Mat -->
+            <div class="product-card">
+                <div class="product-image-container">
+                    <img class="product-image" src="/New folder/mat.jfif" alt="Decorative Mat">
+                    <div class="discount-tag">67% OFF</div>
+                </div>
+                <div class="product-info">
+                    <h3>Decorative Mat</h3>
+                    <p class="product-description">This mat is used for keeping something beautiful to decorate or keeping under something to not scratch.</p>
+                    <div class="price-section">
+                        <span class="original-price">₹60</span>
+                        <span class="sale-price">₹20</span>
+                    </div>
+                    <button class="add-to-cart-btn">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="shop-footer">
+            <h3>Why Choose Us?</h3>
+            <div class="features">
+                <div class="feature-item">✨ 100% Handmade</div>
+                <div class="feature-item">🎨 Unique Designs</div>
+                <div class="feature-item">💚 Quality Materials</div>
+                <div class="feature-item">🚚 Fast Delivery</div>
+            </div>
+        </div>
+    </body>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-content">
+                <!-- Contact Section -->
+                <div class="footer-section">
+                    <h4>📞 Contact Us</h4>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <span class="contact-icon">📱</span>
+                            <a href="tel:+919747269103">+91 9747269103</a>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-icon">💬</span>
+                            <span>WhatsApp: <a href="https://wa.me/919747269103" target="_blank">+91 9747269103</a></span>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-icon">🌍</span>
+                            <span>India</span>
+                        </div>
+                    </div>
+                    <a href="https://wa.me/919747269103" target="_blank" class="whatsapp-btn">💬 Chat on WhatsApp</a>
+                </div>
+
+                <!-- About Section -->
+                <div class="footer-section">
+                    <h4>🧵 About CROSHEQUEEN</h4>
+                    <p class="about-text">We are a passionate team creating beautiful handmade crochet items. From adorable hats to decorative mats, we craft with love and quality materials.</p>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="footer-section">
+                    <h4>🔗 Quick Links</h4>
+                    <div class="footer-links">
+                        <a href="welcome.html">Home</a>
+                        <a href="1BUY.html">Shop</a>
+                        <a href="course.html">Learn Crochet</a>
+                        <a href="cart.html">Cart</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 CROSHEQUEEN. All rights reserved. | Handmade with ❤️ in India</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        // Product data
+        const products = {
+            'hat': {
+                name: 'Cute Crochet Hat',
+                price: 20
+            },
+            'keychain': {
+                name: 'Keychain Craft',
+                price: 20
+            },
+            'mat': {
+                name: 'Decorative Mat',
+                price: 20
+            }
+        };
+
+        // Handle Add to Cart button clicks
+        document.querySelectorAll('.add-to-cart-btn').forEach((button, index) => {
+            const productIds = ['hat', 'keychain', 'mat'];
+            const productId = productIds[index];
+
+            button.addEventListener('click', function() {
+                // Get current cart from localStorage
+                let cart = JSON.parse(localStorage.getItem('cart')) || {};
+
+                // Add or increment product
+                if (cart[productId]) {
+                    cart[productId] += 1;
+                } else {
+                    cart[productId] = 1;
+                }
+
+                // Save cart to localStorage
+                localStorage.setItem('cart', JSON.stringify(cart));
+
+                // Visual feedback
+                const originalText = button.textContent;
+                button.textContent = '✓ Added!';
+                button.style.background = 'linear-gradient(135deg, #4CAF50 0%, #45a049 100%)';
+
+                setTimeout(() => {
+                    button.textContent = originalText;
+                    button.style.background = '';
+                }, 2000);
+
+                // Optional: Show alert or notification
+                alert(`${products[productId].name} added to cart!`);
+            });
+        });
+    </script>
+</html>

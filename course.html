@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Learn Crochet - CROSHEQUEEN</title>
+    <link rel="stylesheet" href="STYLE.CSS">
+    <style>
+        .course-hero {
+            text-align: center;
+            padding: 60px 20px;
+            position: relative;
+            z-index: 1;
+            background: linear-gradient(135deg, rgba(255, 235, 59, 0.2) 0%, rgba(255, 107, 0, 0.15) 100%);
+            border-radius: 20px;
+            margin: 40px auto;
+            max-width: 900px;
+        }
+
+        .course-hero h2 {
+            font-size: 2.8rem;
+            margin: 0 0 15px 0;
+            color: #fff;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.4);
+        }
+
+        .course-hero p {
+            font-size: 1.2rem;
+            margin: 0;
+            color: #fff;
+            text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+            line-height: 1.6;
+        }
+
+        .courses-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .course-card {
+            background: linear-gradient(135deg, #ffffff 0%, #f8f8f8 100%);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 35px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+            border: 2px solid rgba(255, 235, 59, 0.3);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .course-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 20px 50px rgba(255, 107, 0, 0.4);
+            border-color: #ffeb3b;
+        }
+
+        .course-header {
+            background: linear-gradient(135deg, #007BFF 0%, #0056cc 100%);
+            padding: 30px 20px;
+            text-align: center;
+            color: white;
+        }
+
+        .course-icon {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .course-card h3 {
+            font-size: 1.5rem;
+            margin: 0;
+            color: #fff;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+        }
+
+        .course-body {
+            padding: 25px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .course-level {
+            display: inline-block;
+            background: linear-gradient(135deg, #ffeb3b 0%, #ffa000 100%);
+            color: #333;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            width: fit-content;
+        }
+
+        .course-description {
+            font-size: 0.95rem;
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 15px;
+            flex: 1;
+        }
+
+        .course-details {
+            background: rgba(0, 86, 204, 0.05);
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+            color: #333;
+        }
+
+        .detail-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+        }
+
+        .detail-row:last-child {
+            margin-bottom: 0;
+        }
+
+        .course-price {
+            font-size: 1.1rem;
+            color: #d32f2f;
+            font-weight: 800;
+        }
+
+        .enroll-btn {
+            width: 100%;
+            padding: 12px 20px;
+            background: linear-gradient(135deg, #ffeb3b 0%, #ffa000 100%);
+            color: #333;
+            border: none;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(255, 193, 7, 0.4);
+        }
+
+        .enroll-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(255, 107, 0, 0.6);
+            background: linear-gradient(135deg, #ffa000 0%, #ff6f00 100%);
+        }
+
+        .learning-section {
+            text-align: center;
+            padding: 50px 20px;
+            position: relative;
+            z-index: 1;
+            background: linear-gradient(135deg, rgba(0, 86, 204, 0.1) 0%, rgba(42, 157, 143, 0.1) 100%);
+            border-radius: 15px;
+            margin: 60px auto;
+            max-width: 1100px;
+        }
+
+        .learning-section h3 {
+            font-size: 2rem;
+            margin-bottom: 40px;
+            color: #fff;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .benefits {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+        }
+
+        .benefit-item {
+            background: linear-gradient(135deg, rgba(255, 235, 59, 0.3) 0%, rgba(255, 107, 0, 0.2) 100%);
+            padding: 25px;
+            border-radius: 12px;
+            border: 2px solid rgba(255, 235, 59, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .benefit-item:hover {
+            transform: translateY(-5px);
+            border-color: rgba(255, 235, 59, 0.6);
+            box-shadow: 0 8px 20px rgba(255, 107, 0, 0.3);
+        }
+
+        .benefit-icon {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .benefit-item h4 {
+            font-size: 1.2rem;
+            color: #fff;
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+            margin: 10px 0;
+        }
+
+        .benefit-item p {
+            font-size: 0.95rem;
+            color: #fff;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        .testimonials {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(240, 240, 240, 0.9) 100%);
+            padding: 50px 20px;
+            border-radius: 15px;
+            margin: 60px auto;
+            max-width: 1100px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .testimonials h3 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 40px;
+            color: #0056cc;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .testimonial {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            border-left: 4px solid #ffeb3b;
+        }
+
+        .stars {
+            color: #ffa000;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .testimonial-text {
+            font-size: 0.95rem;
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            font-weight: 700;
+            color: #0056cc;
+        }
+
+        .cta-banner {
+            background: linear-gradient(135deg, rgba(255, 235, 59, 0.3) 0%, rgba(255, 107, 0, 0.25) 100%);
+            padding: 50px 20px;
+            border-radius: 15px;
+            text-align: center;
+            margin: 60px auto;
+            max-width: 900px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-banner h3 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #fff;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .cta-banner p {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            color: #fff;
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .cta-banner-btn {
+            background: linear-gradient(135deg, #ffeb3b 0%, #ffa000 100%);
+            color: #333;
+            padding: 15px 40px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 800;
+            font-size: 1.1rem;
+            box-shadow: 0 8px 20px rgba(255, 193, 7, 0.4);
+            transition: all 0.3s ease;
+            display: inline-block;
+            border: none;
+            cursor: pointer;
+        }
+
+        .cta-banner-btn:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 12px 30px rgba(255, 193, 7, 0.6);
+            background: linear-gradient(135deg, #ffa000 0%, #ff6f00 100%);
+        }
+    </style>
+</head>
+<body>
+   <header>
+        <div class="container">
+            <h1>CROSHEQUEEN</h1>
+            <nav aria-label="Primary">
+                <a href="welcome.html">Home</a>
+                <a href="1BUY.html">Buy</a>
+                <a href="course.html">Course</a>
+                
+                <a href="cart.html">Cart</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="course-hero">
+        <h2>Learn the Art of Crochet</h2>
+        <p>Master beautiful handmade crochet crafts from beginner to advanced. Join thousands of students creating amazing projects!</p>
+    </div>
+
+    <div class="courses-grid">
+        <!-- Beginner Course -->
+        <div class="course-card">
+            <div class="course-header">
+                <div class="course-icon">🧵</div>
+                <h3>Beginner Basics</h3>
+            </div>
+            <div class="course-body">
+                <span class="course-level">Beginner</span>
+                <p class="course-description">Learn the fundamentals of crochet! Perfect for complete beginners. Includes basic stitches, techniques, and your first simple project.</p>
+                <div class="course-details">
+                    <div class="detail-row">
+                        <span>⏱️ Duration:</span>
+                        <span>4 Weeks</span>
+                    </div>
+                    <div class="detail-row">
+                        <span>📚 Lessons:</span>
+                        <span>12 Videos</span>
+                    </div>
+                    <div class="detail-row">
+                        <span>🎓 Certificate:</span>
+                        <span>Yes</span>
+                    </div>
+                </div>
+                <div class="course-price">₹499</div>
+                <a href="buy.html" class="enroll-btn">Enroll Now</a>
+            </div>
+        </div>
+
+        <!-- Intermediate Course -->
+        <div class="course-card">
+            <div class="course-header">
+                <div class="course-icon">🎨</div>
+                <h3>Intermediate Projects</h3>
+            </div>
+            <div class="course-body">
+                <span class="course-level">Intermediate</span>
+                <p class="course-description">Level up your skills! Learn advanced stitches, patterns, and create beautiful projects like hats, blankets, and decorative items.</p>
+                <div class="course-details">
+                    <div class="detail-row">
+                        <span>⏱️ Duration:</span>
+                        <span>6 Weeks</span>
+                    </div>
+                    <div class="detail-row">
+                        <span>📚 Lessons:</span>
+                        <span>18 Videos</span>
+                    </div>
+                    <div class="detail-row">
+                        <span>🎓 Certificate:</span>
+                        <span>Yes</span>
+                    </div>
+                </div>
+                <div class="course-price">₹799</div>
+                <a href="buy.html" class="enroll-btn">Enroll Now</a>
+            </div>
+        </div>
+
+        <!-- Advanced Course -->
+        <div class="course-card">
+            <div class="course-header">
+                <div class="course-icon">👑</div>
+                <h3>Advanced Mastery</h3>
+            </div>
+            <div class="course-body">
+                <span class="course-level">Advanced</span>
+                <p class="course-description">Become a crochet expert! Learn intricate designs, color work, custom patterns, and start your own crochet business.</p>
+                <div class="course-details">
+                    <div class="detail-row">
+                        <span>⏱️ Duration:</span>
+                        <span>8 Weeks</span>
+                    </div>
+                    <div class="detail-row">
+                        <span>📚 Lessons:</span>
+                        <span>25 Videos</span>
+                    </div>
+                    <div class="detail-row">
+                        <span>🎓 Certificate:</span>
+                        <span>Yes</span>
+                    </div>
+                </div>
+                <div class="course-price">₹1,299</div>
+                <a href="buy.html" class="enroll-btn">Enroll Now</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="learning-section">
+        <h3>Why Learn Crochet with Us?</h3>
+        <div class="benefits">
+            <div class="benefit-item">
+                <div class="benefit-icon">👨‍🏫</div>
+                <h4>Expert Instructors</h4>
+                <p>Learn from experienced crochet artists with years of expertise sharing their knowledge.</p>
+            </div>
+            <div class="benefit-item">
+                <div class="benefit-icon">🎥</div>
+                <h4>Video Lessons</h4>
+                <p>High-quality video tutorials you can watch anytime, anywhere at your own pace.</p>
+            </div>
+            <div class="benefit-item">
+                <div class="benefit-icon">💬</div>
+                <h4>Community Support</h4>
+                <p>Join a vibrant community of crocheters to share ideas, get feedback, and stay motivated.</p>
+            </div>
+            <div class="benefit-item">
+                <div class="benefit-icon">🎁</div>
+                <h4>Lifetime Access</h4>
+                <p>Once enrolled, access all course materials forever. Learn at your own pace, forever.</p>
+            </div>
+            <div class="benefit-item">
+                <div class="benefit-icon">🏆</div>
+                <h4>Certificates</h4>
+                <p>Receive verified certificates upon completion that you can share on your profiles.</p>
+            </div>
+            <div class="benefit-item">
+                <div class="benefit-icon">🛍️</div>
+                <h4>Sell Your Creations</h4>
+                <p>Learn business tips and start selling your beautiful crochet creations online!</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="testimonials">
+        <h3>What Our Students Say</h3>
+        <div class="testimonial-grid">
+            <div class="testimonial">
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <p class="testimonial-text">"I've always wanted to learn crochet and this course made it so easy! The instructions are clear and the projects are fun. Highly recommend!"</p>
+                <div class="testimonial-author">- Priya M.</div>
+            </div>
+            <div class="testimonial">
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <p class="testimonial-text">"The intermediate course helped me improve my skills dramatically. I'm now selling my creations! Thank you CROSHEQUEEN!"</p>
+                <div class="testimonial-author">- Anjali K.</div>
+            </div>
+            <div class="testimonial">
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <p class="testimonial-text">"Best investment ever! The community support and lifetime access make it so worth it. I keep coming back to refresh my skills."</p>
+                <div class="testimonial-author">- Sarah T.</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="cta-banner">
+        <h3>Ready to Start Your Crochet Journey?</h3>
+        <p>Choose a course above and begin creating beautiful handmade crochet items today!</p>
+        <button class="cta-banner-btn">Browse Courses</button>
+    </div>
+
+    <script>
+        document.querySelector('.cta-banner-btn').addEventListener('click', function() {
+            // Scroll to courses
+            document.querySelector('.courses-grid').scrollIntoView({ behavior: 'smooth' });
+        });
+    </script>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-content">
+                <!-- Contact Section -->
+                <div class="footer-section">
+                    <h4>📞 Contact Us</h4>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <span class="contact-icon">📱</span>
+                            <a href="tel:+919747269103">+91 9747269103</a>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-icon">💬</span>
+                            <span>WhatsApp: <a href="https://wa.me/919747269103" target="_blank">+91 9747269103</a></span>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-icon">🌍</span>
+                            <span>India</span>
+                        </div>
+                    </div>
+                    <a href="https://wa.me/919747269103" target="_blank" class="whatsapp-btn">💬 Chat on WhatsApp</a>
+                </div>
+
+                <!-- About Section -->
+                <div class="footer-section">
+                    <h4>🧵 About CROSHEQUEEN</h4>
+                    <p class="about-text">We are a passionate team creating beautiful handmade crochet items. From adorable hats to decorative mats, we craft with love and quality materials.</p>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="footer-section">
+                    <h4>🔗 Quick Links</h4>
+                    <div class="footer-links">
+                        <a href="welcome.html">Home</a>
+                        <a href="1BUY.html">Shop</a>
+                        <a href="course.html">Learn Crochet</a>
+                        <a href="cart.html">Cart</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 CROSHEQUEEN. All rights reserved. | Handmade with ❤️ in India</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
